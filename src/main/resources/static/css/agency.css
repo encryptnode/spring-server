@@ -39,8 +39,9 @@ section {
 }
 
 section h2.section-heading {
+  /*services section*/
   font-size: 40px;
-  margin-top: 0;
+  margin-top: 0px;
   margin-bottom: 15px;
 }
 
@@ -597,7 +598,7 @@ header.masthead .intro-text .intro-heading {
 
 section#contact {
   background-color: #212529;
-  background-image: url("../../templates/img/map-image.png");
+  background-image: url("../img/map-image.png");
   background-repeat: no-repeat;
   background-position: center;
 }
