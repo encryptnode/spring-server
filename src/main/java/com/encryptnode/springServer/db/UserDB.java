@@ -24,7 +24,7 @@ public class UserDB {
                 mConn = DriverManager.getConnection(url);
                 ResultSet results = mConn.createStatement().executeQuery("SELECT * FROM users");
                 while (results.next()) {
-                    int id = results.getInt("user_id");
+                    int user_id = results.getInt("user_id");
                     String name = results.getString("username");
                 }
             } catch (SQLException e) {
@@ -65,8 +65,8 @@ public class UserDB {
 
         try (ResultSet results = mConn.createStatement().executeQuery(sql)) {
             results.next();
-            int id = results.getInt("user_id");
-            User user = new User(id, username, hashed);
+            int user_id = results.getInt("user_id");
+            User user = new User(user_id, username, hashed);
             return user;
         } catch (SQLException e) {
             return null;
@@ -80,11 +80,11 @@ public class UserDB {
 
         try (ResultSet results = mConn.createStatement().executeQuery(sql)) {
             while (results.next()) {
-                int id = results.getInt("user_id");
+                int user_id = results.getInt("user_id");
                 String username = results.getString("username");
                 String passhash = results.getString("password");
 
-                User user = new User(id, username, passhash);
+                User user = new User(user_id, username, passhash);
                 users.add(user);
             }
         } catch (SQLException e) {
@@ -99,11 +99,11 @@ public class UserDB {
 
         try (ResultSet results = mConn.createStatement().executeQuery(sql)) {
             results.next();
-            int id = results.getInt("user_id");
+            int user_id = results.getInt("user_id");
             String username = results.getString("username");
             String passhash = results.getString("password");
 
-            User user = new User(id, username, passhash);
+            User user = new User(user_id, username, passhash);
             return user;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -121,11 +121,11 @@ public class UserDB {
                 return null;
             }
 
-            int id = results.getInt("user_id");
+            int user_id = results.getInt("user_id");
             String username = results.getString("username");
             String passhash = results.getString("password");
 
-            User user = new User(id, username, passhash);
+            User user = new User(user_id, username, passhash);
             return user;
         } catch (SQLException e) {
             e.printStackTrace();

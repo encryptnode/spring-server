@@ -25,4 +25,12 @@ public class Application {
         return "index";
     }
 
+    @GetMapping("/in")
+    public String login(HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        String username = (String) session.getAttribute("username");
+        System.out.println(session.getId() + " " + username);
+        return "loginsignup";
+    }
+
 }
