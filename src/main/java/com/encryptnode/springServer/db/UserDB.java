@@ -121,12 +121,11 @@ public class UserDB {
                 return null;
             }
 
-            int id = results.getInt("id");
+            int id = results.getInt("user_id");
             String username = results.getString("username");
-            String passhash = results.getString("passhash");
-            String bio = results.getString("bio");
+            String passhash = results.getString("password");
 
-            User user = new User(id, username, passhash, bio);
+            User user = new User(id, username, passhash);
             return user;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -134,28 +133,8 @@ public class UserDB {
         return null;
     }
 
-    public static User updateUserBio (int searchId, String newBio) {
-        String sql = "UPDATE users SET bio='%s' WHERE id=%d RETURNING *;";
-        sql = String.format(sql, newBio, searchId);
-
-        try (ResultSet results = mConn.createStatement().executeQuery(sql)) {
-            results.next();
-
-            int id = results.getInt("id");
-            String username = results.getString("username");
-            String passhash = results.getString("passhash");
-            String bio = results.getString("bio");
-
-            User user = new User(id, username, passhash, bio);
-            return user;
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     public static boolean deleteUser (int searchId) {
-        String sql = "DELETE FROM users WHERE id=%d;";
+        String sql = "DELETE FROM users WHERE user_id=%d;";
         sql = String.format(sql, searchId);
 
         try {
