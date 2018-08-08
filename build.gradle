@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
 
-war {
+jar {
     baseName = 'mvc-thymeleaf-bootstrap'
     version =  '0.1.0'
 }
