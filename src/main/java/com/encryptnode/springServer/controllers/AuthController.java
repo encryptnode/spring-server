@@ -16,22 +16,22 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("/auth")
 @SessionAttributes("username")
 public class AuthController {
-    @PostMapping("/register")
-    public ModelAndView register(
-            @RequestParam String username,
-            @RequestParam String password) {
-        ModelAndView mv = new ModelAndView();
-
-        if (UserDB.getUserByName(username) != null) {
-            mv.setViewName("loginerror");
-            mv.addObject("error", "Sorry, that username already exists. Choose another.");
-        } else {
-            UserDB.createUser(username, password);
-            mv.setViewName("loggedin");
-            mv.addObject("username", username);
-        }
-        return mv;
-    }
+//    @PostMapping("/register")
+//    public ModelAndView register(
+//            @RequestParam String username,
+//            @RequestParam String password) {
+//        ModelAndView mv = new ModelAndView();
+//
+//        if (UserDB.getUserByName(username) != null) {
+//            mv.setViewName("loginerror");
+//            mv.addObject("error", "Sorry, that username already exists. Choose another.");
+//        } else {
+//            UserDB.createUser(username, password);
+//            mv.setViewName("loggedin");
+//            mv.addObject("username", username);
+//        }
+//        return mv;
+//    }
 
     @PostMapping("/login")
     public ModelAndView login(
