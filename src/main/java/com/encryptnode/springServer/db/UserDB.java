@@ -16,7 +16,7 @@ public class UserDB {
     static {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "ec2-54-225-76-201.compute-1.amazonaws.com:5432/d8imvua4k1tucn";
+            String url = "jdbc:postgresql://localhost:5432/d8imvua4k1tucn";
 
 
 
