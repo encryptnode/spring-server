@@ -16,7 +16,7 @@ public class UserDB {
     static {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/encryptnode";
+            String url = "jdbc:postgresql://localhost:5432/d8imvua4k1tucn";
 
 
 
@@ -38,8 +38,8 @@ public class UserDB {
     }
 
     public static void reset() {
-        String sql = "DROP DATABASE IF EXISTS  encryptnode; " +
-        "CREATE DATABASE encryptnode; " +
+        String sql = "DROP DATABASE IF EXISTS  d8imvua4k1tucn; " +
+        "CREATE DATABASE d8imvua4k1tucn; " +
         "DROP TABLE IF EXISTS users; " +
         "CREATE TABLE users ( " +
         "        user_id serial, " +
