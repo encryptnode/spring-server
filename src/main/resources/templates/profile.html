@@ -1,0 +1,36 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <link rel="stylesheet" href="/templates/styles.css" />
+    <title>Profile</title>
+</head>
+
+<body>
+<h2>You have successfully accessed your profile </h2>
+
+
+<h1>Wallet</h1>
+
+
+<p>
+    <span>Name: </span>
+    <span th:text="${username}"></span>
+
+</p>
+
+<h1>Logout</h1>
+<form action="/auth/logout" method="POST">
+    <input type="submit" />
+</form>
+
+
+
+
+    <p>
+        <a href="/">home</a>
+    </p>
+
+</body>
+</html>
+
+

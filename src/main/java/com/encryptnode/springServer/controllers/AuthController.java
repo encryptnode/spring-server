@@ -53,6 +53,7 @@ public class AuthController {
 
                 HttpSession session = request.getSession();
                 session.setAttribute("loggedin", true);
+                System.out.println("User has logged in as: " + username);
             } else {
                 mv.setViewName("loginerror");
                 mv.addObject("error", "Wrong password. Try again.");
