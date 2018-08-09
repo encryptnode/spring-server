@@ -12,6 +12,8 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import static com.encryptnode.springServer.db.UserDB.getUserFromBlock;
+
 @Controller
 @RequestMapping("/auth")
 @SessionAttributes("username")
@@ -42,6 +44,7 @@ public class AuthController {
         ModelAndView mv = new ModelAndView();
 
         User user = UserDB.getUserByName(username);
+        user.balance = getUserFromBlock(user.user_id);
         if (user == null) {
             mv.setViewName("loginerror");
             mv.addObject("error", "Username not found. Choose another.");
