@@ -33,6 +33,8 @@ public class PrivateController {
         mv.addObject("user_id", user.user_id);
 
 
+
+
         System.out.println("THIS IS REQUEST MAPPING: " + "/private " + session.getAttribute("loggedin"));
         if (isLoggedIn) {
             mv.setViewName("profile");

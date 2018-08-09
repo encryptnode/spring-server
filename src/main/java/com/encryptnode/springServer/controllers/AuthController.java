@@ -27,7 +27,7 @@ public class AuthController {
             mv.addObject("error", "Sorry, that username already exists. Choose another.");
         } else {
             UserDB.createUser(username, password);
-            mv.setViewName("loggedin");
+            mv.setViewName("registered");
             mv.addObject("username", username);
         }
         return mv;
