@@ -7,16 +7,19 @@
 
 <body>
 <h2>You have successfully accessed your profile </h2>
+<p>
+    <span>You are logged in as </span>
+    <b><span th:text="${username}"></span></b>
+    <span>and your ID number is: </span>
+    <b><span th:text="${user_id}"></span></b>
+
+</p>
 
 
 <h1>Wallet</h1>
 
 
-<p>
-    <span>Name: </span>
-    <span th:text="${username}"></span>
 
-</p>
 
 <h1>Logout</h1>
 <form action="/auth/logout" method="POST">

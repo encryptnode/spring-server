@@ -24,8 +24,15 @@ public class PrivateController {
         String servlet = request.getServletPath();
         ModelAndView mv = new ModelAndView();
 
+
         HttpSession session = request.getSession();
         boolean isLoggedIn = (boolean) session.getAttribute("loggedin");
+        User user = (User) session.getAttribute("user");
+
+        mv.addObject("username", user.username);
+        mv.addObject("user_id", user.user_id);
+
+
         System.out.println("THIS IS REQUEST MAPPING: " + "/private " + session.getAttribute("loggedin"));
         if (isLoggedIn) {
             mv.setViewName("profile");
