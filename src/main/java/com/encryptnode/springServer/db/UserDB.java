@@ -16,7 +16,7 @@ public class UserDB {
     static {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5432/encryptnode";
+             String url = "jdbc:postgresql://ec2-54-225-76-201.compute-1.amazonaws.com:5432/d8imvua4k1tucn?user=rzlajnimzpnjuo&password=4acb3fc818ed2c08307d953cd531e71f7069eb9ffcd79715c559a5dc6df39508&sslmode=require";
 
 
 
