@@ -45,6 +45,10 @@ section h2.section-heading {
   margin-bottom: 15px;
 }
 
+#paul {
+    margin-top: 10%;
+}
+
 section h3.section-subheading {
   font-size: 16px;
   font-weight: 400;
@@ -55,6 +59,9 @@ section h3.section-subheading {
 }
 
 @media (min-width: 768px) {
+
+
+
   section {
     padding: 150px 0;
   }
