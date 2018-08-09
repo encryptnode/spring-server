@@ -32,7 +32,7 @@ public class PrivateController {
         mv.addObject("username", user.username);
         mv.addObject("user_id", user.user_id);
 
-
+        mv.addObject("balance", user.balance);
 
 
         System.out.println("THIS IS REQUEST MAPPING: " + "/private " + session.getAttribute("loggedin"));

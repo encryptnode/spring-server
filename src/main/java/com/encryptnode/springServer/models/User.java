@@ -10,6 +10,7 @@ public class User {
     public int user_id;
     public String username;
     private String password;
+    public int balance = 0;
 
     public User() {
         this(DEFAULT_NAME, DEFAULT_PASS);
